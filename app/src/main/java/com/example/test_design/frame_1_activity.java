@@ -27,20 +27,27 @@ package com.example.test_design;
 		//Quick access folders
 		private View qa_home;
 		private View qa_work;
+
 		//Day of week tabs
 		private View dayofweek1;
 		private View dayofweek2;
 		private View dayofweek3;
 		private View dayofweek4;
+
 		//User input and list view + adapter
 		private EditText taskInput;
 		private ListView taskListView;
 		private ArrayList<String> taskList;
 		private ArrayAdapter<String> taskAdapter;
+
 		//Add task button inside popup window
 		private Button add_button;
+
 		//Add task button on main menu
 		private ImageButton qa_add;
+
+		//Add task button on main screen
+		private Button add_task;
 
 		//Create a calendar method instance
 		Calendar calendar = Calendar.getInstance();
@@ -67,6 +74,9 @@ package com.example.test_design;
 		//List view on main screen
 		taskListView = findViewById(R.id.buttom_panel);
 
+		//Add task button
+		add_task = findViewById(R.id.add_task);
+
 		//Reads saved tasks from file
 		readItems("dow1");
 
@@ -78,6 +88,19 @@ package com.example.test_design;
 			@Override
 			public void onClick(View view) {
 				readItems("dow1");
+				taskAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, taskList);
+				taskListView.setAdapter(taskAdapter);
+
+				//Add a task and refresh list view
+				add_task.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						input_popup("dow1");
+						readItems("dow1");
+						taskAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, taskList);
+						taskListView.setAdapter(taskAdapter);
+					}
+				});
 
 				//To remove a task, a user shall press and hold a selected item
 				taskListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -90,18 +113,6 @@ package com.example.test_design;
 					}
 				});
 
-				taskAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, taskList);
-				taskListView.setAdapter(taskAdapter);
-
-				qa_add.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View view) {
-						input_popup("dow1");
-						readItems("dow1");
-						taskAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, taskList);
-						taskListView.setAdapter(taskAdapter);
-					}
-				});
 			}
 		});
 
@@ -109,6 +120,19 @@ package com.example.test_design;
 			@Override
 			public void onClick(View view) {
 				readItems("dow2");
+				taskAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, taskList);
+				taskListView.setAdapter(taskAdapter);
+
+				//Add a task and refresh list view
+				add_task.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						input_popup("dow2");
+						readItems("dow2");
+						taskAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, taskList);
+						taskListView.setAdapter(taskAdapter);
+					}
+				});
 
 				//To remove a task, a user shall press and hold a selected item
 				taskListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -120,19 +144,6 @@ package com.example.test_design;
 						return true;
 					}
 				});
-
-				taskAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, taskList);
-				taskListView.setAdapter(taskAdapter);
-
-				qa_add.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View view) {
-						input_popup("dow2");
-						readItems("dow2");
-						taskAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, taskList);
-						taskListView.setAdapter(taskAdapter);
-					}
-				});
 			}
 		});
 
@@ -140,6 +151,19 @@ package com.example.test_design;
 			@Override
 			public void onClick(View view) {
 				readItems("dow3");
+				taskAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, taskList);
+				taskListView.setAdapter(taskAdapter);
+
+				//Add a task and refresh list view
+				add_task.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						input_popup("dow3");
+						readItems("dow3");
+						taskAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, taskList);
+						taskListView.setAdapter(taskAdapter);
+					}
+				});
 
 				//To remove a task, a user shall press and hold a selected item
 				taskListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -151,19 +175,6 @@ package com.example.test_design;
 						return true;
 					}
 				});
-
-				taskAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, taskList);
-				taskListView.setAdapter(taskAdapter);
-
-				qa_add.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View view) {
-						input_popup("dow3");
-						readItems("dow3");
-						taskAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, taskList);
-						taskListView.setAdapter(taskAdapter);
-					}
-				});
 			}
 		});
 
@@ -171,6 +182,19 @@ package com.example.test_design;
 			@Override
 			public void onClick(View view) {
 				readItems("dow4");
+				taskAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, taskList);
+				taskListView.setAdapter(taskAdapter);
+
+				//Add a task and refresh list view
+				add_task.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						input_popup("dow4");
+						readItems("dow4");
+						taskAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, taskList);
+						taskListView.setAdapter(taskAdapter);
+					}
+				});
 
 				//To remove a task, a user shall press and hold a selected item
 				taskListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -180,19 +204,6 @@ package com.example.test_design;
 						taskAdapter.notifyDataSetChanged();
 						writeItems("dow4");
 						return true;
-					}
-				});
-
-				taskAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, taskList);
-				taskListView.setAdapter(taskAdapter);
-
-				qa_add.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View view) {
-						input_popup("dow4");
-						readItems("dow4");
-						taskAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, taskList);
-						taskListView.setAdapter(taskAdapter);
 					}
 				});
 			}
