@@ -219,7 +219,7 @@ public class TasksActivity extends AppCompatActivity {
     }
 
     public void ClickMenu(View view){
-        frame_1_activity.openDrawer(drawerLayout);
+        MainActivity.openDrawer(drawerLayout);
     }
 
     public void ClickTasks(View view){
@@ -227,7 +227,7 @@ public class TasksActivity extends AppCompatActivity {
     }
 
     public void ClickNotes(View view){
-        frame_1_activity.redirectActivity(this, NotesActivity.class);
+        MainActivity.redirectActivity(this, NotesActivity.class);
     }
 
     public void updateDaysOfWeek() {

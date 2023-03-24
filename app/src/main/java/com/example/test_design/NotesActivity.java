@@ -65,7 +65,9 @@ public class NotesActivity extends AppCompatActivity {
     private void loadSavedNotes() {
         String[] savedNotes = fileList();
         for (String note : savedNotes) {
+            if(!note.contains("dow")) {
                 adapter.add(note);
+            }
         }
     }
 

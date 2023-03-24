@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-	public class frame_1_activity extends AppCompatActivity {
+	public class MainActivity extends AppCompatActivity {
 		DrawerLayout drawerLayout;
 
 	@Override
