@@ -6,27 +6,69 @@
     android:background="#BC9579"
     android:id="@+id/notes_activity">
 
-    <EditText
-        android:id="@+id/note_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="51dp"
-        android:hint="Enter your note here"/>
-
-    <Button
-        android:id="@+id/save_note_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/note_edit_text"
-        android:layout_alignParentEnd="true"
-        android:onClick="saveNoteButtonClicked"
-        android:text="Save"/>
-
-    <ListView
-        android:id="@+id/notes_list_view"
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/save_note_button"/>
+        tools:openDrawer="end">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#5A3726"
+        app:headerLayout="@layout/header_navigation"
+        app:menu="@menu/side_bar_menu">
+
+    </com.google.android.material.navigation.NavigationView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#744936"
+            app:navigationIcon="@drawable/baseline_menu_24"
+            app:title="Navigation Drawer">
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/note_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="51dp"
+                android:hint="Enter your note here"/>
+
+            <Button
+                android:id="@+id/save_note_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/note_edit_text"
+                android:layout_alignParentEnd="true"
+                android:onClick="saveNoteButtonClicked"
+                android:text="Save"/>
+
+            <ListView
+                android:id="@+id/notes_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/save_note_button"/>
+
+
+        </RelativeLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
 
     </RelativeLayout>
 

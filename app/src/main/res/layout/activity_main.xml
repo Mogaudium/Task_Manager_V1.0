@@ -8,145 +8,11 @@
 	android:background="#BC9579"
 	tools:context=".MainActivity">
 
-	<ListView
-		android:id="@+id/buttom_panel"
-		android:layout_width="match_parent"
-		android:layout_height="515dp"
-		android:background="#744936"
-		app:layout_constraintBottom_toBottomOf="parent"
-		tools:layout_editor_absoluteX="32dp" />
-
-
-	<ImageView
-		android:id="@+id/qa_home"
-		android:layout_width="50dp"
-		android:layout_height="50dp"
-		android:layout_marginStart="16dp"
-		android:layout_marginTop="80dp"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
-		app:srcCompat="@drawable/qa_rectangle" />
-
-	<ImageView
-		android:id="@+id/qa_work"
-		android:layout_width="50dp"
-		android:layout_height="50dp"
-		android:layout_marginStart="40dp"
-		android:layout_marginTop="80dp"
-		app:layout_constraintStart_toEndOf="@+id/qa_home"
-		app:layout_constraintTop_toTopOf="parent"
-		app:srcCompat="@drawable/qa_rectangle" />
-
-	<ImageButton
-		android:id="@+id/qa_add"
-		android:layout_width="50dp"
-		android:layout_height="50dp"
-		android:layout_marginStart="40dp"
-		android:layout_marginTop="80dp"
-		app:layout_constraintStart_toEndOf="@+id/qa_work"
-		app:layout_constraintTop_toTopOf="parent"
-		app:srcCompat="@drawable/qa_add" />
-
-	<View
-		android:id="@+id/day_of_week4"
-		android:layout_width="73dp"
-		android:layout_height="20dp"
-		android:layout_marginStart="8dp"
-		android:background="@drawable/dow_tab"
-		android:clickable="true"
-		app:layout_constraintBottom_toTopOf="@+id/buttom_panel"
-		app:layout_constraintStart_toEndOf="@+id/day_of_week3" />
-
-	<View
-		android:id="@+id/day_of_week3"
-		android:layout_width="73dp"
-		android:layout_height="20dp"
-		android:layout_marginStart="8dp"
-		android:background="@drawable/dow_tab"
-		android:clickable="true"
-		app:layout_constraintBottom_toTopOf="@+id/buttom_panel"
-		app:layout_constraintStart_toEndOf="@+id/day_of_week2" />
-
-	<View
-		android:id="@+id/day_of_week2"
-		android:layout_width="73dp"
-		android:layout_height="20dp"
-		android:layout_marginStart="8dp"
-		android:background="@drawable/dow_tab"
-		android:clickable="true"
-		app:layout_constraintBottom_toTopOf="@+id/buttom_panel"
-		app:layout_constraintStart_toEndOf="@+id/day_of_week1" />
-
-	<View
-		android:id="@+id/day_of_week1"
-		android:layout_width="73dp"
-		android:layout_height="20dp"
-		android:layout_marginStart="16dp"
-		android:background="@drawable/dow_tab"
-		android:clickable="true"
-		app:layout_constraintBottom_toTopOf="@+id/buttom_panel"
-		app:layout_constraintStart_toStartOf="parent" />
-
-	<TextView
-		android:id="@+id/textView"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="16dp"
-		android:layout_marginTop="60dp"
-		android:text="Quick Access"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
-
-	<!-- Auto update days of week -->
-
-	<TextView
-		android:id="@+id/dow1"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		app:layout_constraintEnd_toEndOf="@+id/day_of_week1"
-		app:layout_constraintStart_toStartOf="@+id/day_of_week1"
-		app:layout_constraintTop_toTopOf="@+id/day_of_week1" />
-
-	<TextView
-		android:id="@+id/dow2"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		app:layout_constraintEnd_toEndOf="@+id/day_of_week2"
-		app:layout_constraintStart_toStartOf="@+id/day_of_week2"
-		app:layout_constraintTop_toTopOf="@+id/day_of_week2" />
-
-	<TextView
-		android:id="@+id/dow3"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		app:layout_constraintEnd_toEndOf="@+id/day_of_week3"
-		app:layout_constraintStart_toStartOf="@+id/day_of_week3"
-		app:layout_constraintTop_toTopOf="@+id/day_of_week3" />
-
-	<TextView
-		android:id="@+id/dow4"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		app:layout_constraintEnd_toEndOf="@+id/day_of_week4"
-		app:layout_constraintStart_toStartOf="@+id/day_of_week4"
-		app:layout_constraintTop_toTopOf="@+id/day_of_week4" />
-
-	<ImageButton
-		android:id="@+id/add_task"
-		android:layout_width="250dp"
-		android:layout_height="30dp"
-		android:layout_marginTop="160dp"
-		android:src="@drawable/add_task"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.498"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
-
 	<androidx.drawerlayout.widget.DrawerLayout
 		android:id="@+id/drawer_layout"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		tools:openDrawer="start">
+		tools:openDrawer="end">
 
 		<com.google.android.material.navigation.NavigationView
 			android:id="@+id/navigator_layout"
@@ -175,7 +41,148 @@
 
 		</RelativeLayout>
 
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<ListView
+				android:id="@+id/buttom_panel"
+				android:layout_width="match_parent"
+				android:layout_height="515dp"
+				android:background="#744936"
+				app:layout_constraintBottom_toBottomOf="parent"
+				tools:layout_editor_absoluteX="32dp" />
+
+
+			<ImageView
+				android:id="@+id/qa_home"
+				android:layout_width="50dp"
+				android:layout_height="50dp"
+				android:layout_marginStart="16dp"
+				android:layout_marginTop="80dp"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:srcCompat="@drawable/qa_rectangle" />
+
+			<ImageView
+				android:id="@+id/qa_work"
+				android:layout_width="50dp"
+				android:layout_height="50dp"
+				android:layout_marginStart="40dp"
+				android:layout_marginTop="80dp"
+				app:layout_constraintStart_toEndOf="@+id/qa_home"
+				app:layout_constraintTop_toTopOf="parent"
+				app:srcCompat="@drawable/qa_rectangle" />
+
+			<ImageButton
+				android:id="@+id/qa_add"
+				android:layout_width="50dp"
+				android:layout_height="50dp"
+				android:layout_marginStart="40dp"
+				android:layout_marginTop="80dp"
+				app:layout_constraintStart_toEndOf="@+id/qa_work"
+				app:layout_constraintTop_toTopOf="parent"
+				app:srcCompat="@drawable/qa_add" />
+
+			<View
+				android:id="@+id/day_of_week4"
+				android:layout_width="73dp"
+				android:layout_height="20dp"
+				android:layout_marginStart="8dp"
+				android:background="@drawable/dow_tab"
+				android:clickable="true"
+				app:layout_constraintBottom_toTopOf="@+id/buttom_panel"
+				app:layout_constraintStart_toEndOf="@+id/day_of_week3" />
+
+			<View
+				android:id="@+id/day_of_week3"
+				android:layout_width="73dp"
+				android:layout_height="20dp"
+				android:layout_marginStart="8dp"
+				android:background="@drawable/dow_tab"
+				android:clickable="true"
+				app:layout_constraintBottom_toTopOf="@+id/buttom_panel"
+				app:layout_constraintStart_toEndOf="@+id/day_of_week2" />
+
+			<View
+				android:id="@+id/day_of_week2"
+				android:layout_width="73dp"
+				android:layout_height="20dp"
+				android:layout_marginStart="8dp"
+				android:background="@drawable/dow_tab"
+				android:clickable="true"
+				app:layout_constraintBottom_toTopOf="@+id/buttom_panel"
+				app:layout_constraintStart_toEndOf="@+id/day_of_week1" />
+
+			<View
+				android:id="@+id/day_of_week1"
+				android:layout_width="73dp"
+				android:layout_height="20dp"
+				android:layout_marginStart="16dp"
+				android:background="@drawable/dow_tab"
+				android:clickable="true"
+				app:layout_constraintBottom_toTopOf="@+id/buttom_panel"
+				app:layout_constraintStart_toStartOf="parent" />
+
+			<TextView
+				android:id="@+id/textView"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="16dp"
+				android:layout_marginTop="60dp"
+				android:text="Quick Access"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<!-- Auto update days of week -->
+
+			<TextView
+				android:id="@+id/dow1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:layout_constraintEnd_toEndOf="@+id/day_of_week1"
+				app:layout_constraintStart_toStartOf="@+id/day_of_week1"
+				app:layout_constraintTop_toTopOf="@+id/day_of_week1" />
+
+			<TextView
+				android:id="@+id/dow2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:layout_constraintEnd_toEndOf="@+id/day_of_week2"
+				app:layout_constraintStart_toStartOf="@+id/day_of_week2"
+				app:layout_constraintTop_toTopOf="@+id/day_of_week2" />
+
+			<TextView
+				android:id="@+id/dow3"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:layout_constraintEnd_toEndOf="@+id/day_of_week3"
+				app:layout_constraintStart_toStartOf="@+id/day_of_week3"
+				app:layout_constraintTop_toTopOf="@+id/day_of_week3" />
+
+			<TextView
+				android:id="@+id/dow4"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:layout_constraintEnd_toEndOf="@+id/day_of_week4"
+				app:layout_constraintStart_toStartOf="@+id/day_of_week4"
+				app:layout_constraintTop_toTopOf="@+id/day_of_week4" />
+
+			<ImageButton
+				android:id="@+id/add_task"
+				android:layout_width="250dp"
+				android:layout_height="30dp"
+				android:layout_marginTop="160dp"
+				android:src="@drawable/add_task"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHorizontal_bias="0.498"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
 	</androidx.drawerlayout.widget.DrawerLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
