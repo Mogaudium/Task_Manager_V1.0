@@ -3,14 +3,7 @@
     <!-- frame_1 strings -->
 
     <string name="app_name">Page 1</string>
-    <string name="ek_img_content">ExportKit Image</string>
-    <string name="home_string">HOME</string>
-    <string name="work_string">WORK</string>
-    <string name="quick_access_string">Quick access </string>
-    <string name="mon_string">MON</string>
-    <string name="tue_string">TUE</string>
-    <string name="thu_string">THU</string>
-    <string name="wed_string">WED</string>
-    <string name="_12_00_am_string">12:00 AM </string>
+    <string name="navigation_open">Open nav</string>
+    <string name="navigator_close">Close nav</string>
 
 </resources>

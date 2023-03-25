@@ -15,7 +15,6 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import org.apache.commons.io.FileUtils;
 
@@ -56,14 +55,10 @@ public class TasksActivity extends AppCompatActivity {
     // Get the current day of the week (1 = Sunday, 2 = Monday, etc.)
     int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
 
-    DrawerLayout drawerLayout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
-
-        drawerLayout = findViewById(R.id.drawer_layout);
 
         //Day of week views
         dayofweek1 = findViewById(R.id.day_of_week1);
@@ -216,18 +211,6 @@ public class TasksActivity extends AppCompatActivity {
 
         updateDaysOfWeek();
 
-    }
-
-    public void ClickMenu(View view){
-        MainActivity.openDrawer(drawerLayout);
-    }
-
-    public void ClickTasks(View view){
-        recreate();
-    }
-
-    public void ClickNotes(View view){
-        MainActivity.redirectActivity(this, NotesActivity.class);
     }
 
     public void updateDaysOfWeek() {

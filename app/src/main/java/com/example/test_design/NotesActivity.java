@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -21,8 +20,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class NotesActivity extends AppCompatActivity {
-
-    DrawerLayout drawerLayout;
     private ListView notesListView;
     private ArrayAdapter<String> adapter;
 
@@ -30,8 +27,6 @@ public class NotesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
-
-        drawerLayout = findViewById(R.id.drawer_activity);
 
         notesListView = findViewById(R.id.notes_list_view);
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);

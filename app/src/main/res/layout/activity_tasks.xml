@@ -7,45 +7,6 @@
     android:background="#BC9579"
     tools:context=".TasksActivity">
 
-        <androidx.drawerlayout.widget.DrawerLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-                <com.google.android.material.navigation.NavigationView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="start">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-                <include
-                    layout="@layout/main_toolbar"/>
-
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="300dp"
-            android:layout_height="match_parent">
-
-                <include
-                        layout="@layout/main_nav"/>
-
-        </RelativeLayout>
-
-
-                </com.google.android.material.navigation.NavigationView>
-
-
-        </androidx.drawerlayout.widget.DrawerLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
         <ListView
             android:id="@+id/buttom_panel"
             android:layout_width="match_parent"
@@ -179,8 +140,5 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
