@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#BC9579"
-    android:id="@+id/drawer_activity">
+    android:id="@+id/notes_activity">
 
     <EditText
         android:id="@+id/note_edit_text"
@@ -27,41 +27,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/save_note_button"/>
-
-    <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/drawer_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:openDrawer="start">
-
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navigator_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:background="#5A3726"
-            app:headerLayout="@layout/header_navigation"
-            app:menu="@menu/side_bar_menu">
-
-        </com.google.android.material.navigation.NavigationView>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="#744936"
-                app:navigationIcon="@drawable/baseline_menu_24"
-                app:title="Navigation Drawer">
-
-            </androidx.appcompat.widget.Toolbar>
-
-        </RelativeLayout>
-
-    </androidx.drawerlayout.widget.DrawerLayout>
 
     </RelativeLayout>
 

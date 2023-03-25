@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -20,6 +21,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class NotesActivity extends AppCompatActivity {
+
+    DrawerLayout drawerLayout;
     private ListView notesListView;
     private ArrayAdapter<String> adapter;
 

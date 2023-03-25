@@ -3,9 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer_layout"
-    android:background="#BC9579"
-    tools:context=".TasksActivity">
+    android:id="@+id/tasks_activity"
+    android:background="#BC9579">
 
         <ListView
             android:id="@+id/buttom_panel"
