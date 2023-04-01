@@ -1,36 +1,10 @@
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer_layout"
-    android:background="#BC9579"
-    tools:context=".TasksActivity">
-
-        <!-- This shit fuckes it up
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-                <include
-                    layout="@layout/main_toolbar"/>
-
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="300dp"
-            android:layout_height="match_parent">
-
-                <include
-                        layout="@layout/main_nav"/>
-
-        </RelativeLayout>
-        -->
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    android:id="@+id/tasks_activity"
+    android:background="#BC9579">
 
         <ListView
             android:id="@+id/buttom_panel"
@@ -166,7 +140,4 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</androidx.drawerlayout.widget.DrawerLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

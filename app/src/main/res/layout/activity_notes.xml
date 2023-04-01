@@ -1,56 +1,74 @@
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#BC9579"
-    android:id="@+id/drawer_activity">
+    android:id="@+id/notes_activity">
 
-    <!-- This shit fuckes it up
-    <LinearLayout
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        tools:openDrawer="end">
 
-        <include
-            layout="@layout/main_toolbar"/>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#5A3726"
+        app:headerLayout="@layout/header_navigation"
+        app:menu="@menu/side_bar_menu">
 
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="300dp"
-        android:layout_height="match_parent">
-
-        <include
-            layout="@layout/main_nav"/>
-
-    </RelativeLayout>
-    -->
+    </com.google.android.material.navigation.NavigationView>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/note_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:hint="Enter your note here"/>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#744936"
+            app:navigationIcon="@drawable/baseline_menu_24"
+            app:title="Navigation Drawer">
 
-    <Button
-        android:id="@+id/save_note_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/note_edit_text"
-        android:layout_alignParentEnd="true"
-        android:onClick="saveNoteButtonClicked"
-        android:text="Save"/>
-
-    <ListView
-        android:id="@+id/notes_list_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/note_edit_text"
-        android:layout_marginTop="16dp" />
+        </androidx.appcompat.widget.Toolbar>
 
     </RelativeLayout>
 
-</androidx.drawerlayout.widget.DrawerLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/note_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="51dp"
+                android:hint="Enter your note here"/>
+
+            <Button
+                android:id="@+id/save_note_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/note_edit_text"
+                android:layout_alignParentEnd="true"
+                android:onClick="saveNoteButtonClicked"
+                android:text="Save"/>
+
+            <ListView
+                android:id="@+id/notes_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/save_note_button"/>
+
+
+        </RelativeLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+    </RelativeLayout>
+

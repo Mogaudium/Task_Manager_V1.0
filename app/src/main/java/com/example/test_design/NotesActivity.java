@@ -1,7 +1,10 @@
 package com.example.test_design;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -9,9 +12,15 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -20,9 +29,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class NotesActivity extends AppCompatActivity {
+public class NotesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
+    Menu menu;
     private ListView notesListView;
     private ArrayAdapter<String> adapter;
 
@@ -31,7 +43,20 @@ public class NotesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
 
-        drawerLayout = findViewById(R.id.drawer_activity);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.navigator_layout);
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        menu = navigationView.getMenu();
+        navigationView.getHeaderView(0);
+        navigationView.bringToFront();
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_open, R.string.navigator_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_tasks);
 
         notesListView = findViewById(R.id.notes_list_view);
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
@@ -60,6 +85,20 @@ public class NotesActivity extends AppCompatActivity {
 
         loadSavedNotes();
 
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.nav_tasks:
+                drawerLayout.closeDrawer(GravityCompat.START);
+                startActivity(new Intent(NotesActivity.this, MainActivity.class));
+                break;
+            case R.id.nav_notes:
+                drawerLayout.closeDrawer(GravityCompat.START);
+                break;
+        }
+        return false;
     }
 
     private void loadSavedNotes() {
