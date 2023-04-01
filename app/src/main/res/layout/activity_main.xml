@@ -12,7 +12,7 @@
 		android:id="@+id/drawer_layout"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		tools:openDrawer="start">
+		tools:openDrawer="end">
 
 		<com.google.android.material.navigation.NavigationView
 			android:id="@+id/navigator_layout"
@@ -59,7 +59,7 @@
 				android:layout_width="50dp"
 				android:layout_height="50dp"
 				android:layout_marginStart="16dp"
-				android:layout_marginTop="100dp"
+				android:layout_marginTop="80dp"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toTopOf="parent"
 				app:srcCompat="@drawable/qa_rectangle" />
@@ -69,7 +69,7 @@
 				android:layout_width="50dp"
 				android:layout_height="50dp"
 				android:layout_marginStart="40dp"
-				android:layout_marginTop="100dp"
+				android:layout_marginTop="80dp"
 				app:layout_constraintStart_toEndOf="@+id/qa_home"
 				app:layout_constraintTop_toTopOf="parent"
 				app:srcCompat="@drawable/qa_rectangle" />
@@ -79,7 +79,7 @@
 				android:layout_width="50dp"
 				android:layout_height="50dp"
 				android:layout_marginStart="40dp"
-				android:layout_marginTop="100dp"
+				android:layout_marginTop="80dp"
 				app:layout_constraintStart_toEndOf="@+id/qa_work"
 				app:layout_constraintTop_toTopOf="parent"
 				app:srcCompat="@drawable/qa_add" />
@@ -129,7 +129,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginStart="16dp"
-				android:layout_marginTop="65dp"
+				android:layout_marginTop="60dp"
 				android:text="Quick Access"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toTopOf="parent" />
@@ -140,7 +140,6 @@
 				android:id="@+id/dow1"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:textColor="@color/black"
 				app:layout_constraintEnd_toEndOf="@+id/day_of_week1"
 				app:layout_constraintStart_toStartOf="@+id/day_of_week1"
 				app:layout_constraintTop_toTopOf="@+id/day_of_week1" />
@@ -149,7 +148,6 @@
 				android:id="@+id/dow2"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:textColor="@color/black"
 				app:layout_constraintEnd_toEndOf="@+id/day_of_week2"
 				app:layout_constraintStart_toStartOf="@+id/day_of_week2"
 				app:layout_constraintTop_toTopOf="@+id/day_of_week2" />
@@ -158,7 +156,6 @@
 				android:id="@+id/dow3"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:textColor="@color/black"
 				app:layout_constraintEnd_toEndOf="@+id/day_of_week3"
 				app:layout_constraintStart_toStartOf="@+id/day_of_week3"
 				app:layout_constraintTop_toTopOf="@+id/day_of_week3" />
@@ -167,7 +164,6 @@
 				android:id="@+id/dow4"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:textColor="@color/black"
 				app:layout_constraintEnd_toEndOf="@+id/day_of_week4"
 				app:layout_constraintStart_toStartOf="@+id/day_of_week4"
 				app:layout_constraintTop_toTopOf="@+id/day_of_week4" />
@@ -176,7 +172,7 @@
 				android:id="@+id/add_task"
 				android:layout_width="250dp"
 				android:layout_height="30dp"
-				android:layout_marginTop="200dp"
+				android:layout_marginTop="160dp"
 				android:src="@drawable/add_task"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintHorizontal_bias="0.498"

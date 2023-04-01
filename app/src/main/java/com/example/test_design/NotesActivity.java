@@ -174,7 +174,6 @@ public class NotesActivity extends AppCompatActivity implements NavigationView.O
             Toast.makeText(this, "Note is empty", Toast.LENGTH_SHORT).show();
             return;
         }
-        noteEditText.setText("");
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Enter note file name:");
@@ -198,6 +197,7 @@ public class NotesActivity extends AppCompatActivity implements NavigationView.O
 
                     osw.close();
                     fos.close();
+
                     adapter.add(fileName);
                     adapter.notifyDataSetChanged();
                 } catch (IOException e) {
